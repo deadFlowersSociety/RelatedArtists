@@ -1,6 +1,6 @@
 # CRUD API
 
-The current server can handle 4 different types of requests:
+The current server can handle 4 different types of requests when hooked up with crudyDB.js:
 
 1. PUT: /relatedArtists/artist/newArtist - `postNewArtist`
 > When provided with a new Artist, the PUT request will place a new Artist in the Database and adds related artists to them
