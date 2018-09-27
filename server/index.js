@@ -10,7 +10,7 @@ server.use(cors());
 server.use(express.urlencoded({ extended: true }));
 server.use(express.static(path.join(__dirname, '../public')));
 
-server.get(`/artist/:id/relatedArtists`, (req, res) => {
+server.get(`/relatedArtists/artist/:id`, (req, res) => {
   getRelatedArtists (req.params.id, (error, data) => {
     if (error) {
       res.status(400).send(error);
@@ -20,7 +20,7 @@ server.get(`/artist/:id/relatedArtists`, (req, res) => {
   });
 });
 
-server.post(`/artist/newArtist`, (req, res) => {
+server.post(`/relatedArtists/artist/newArtist`, (req, res) => {
   postNewArtist (req.body.artist, (error, data) => {
     if (error) {
       res.status(400).send(error);
@@ -30,7 +30,7 @@ server.post(`/artist/newArtist`, (req, res) => {
   });
 });
 
-server.put(`/artist/:id/edit`, (req, res) => {
+server.put(`/relatedArtists/artist/:id`, (req, res) => {
   editArtist (req.params.id, req.body.artist, (error, data) => {
     if (error) {
       res.status(400).send(error);
@@ -40,7 +40,7 @@ server.put(`/artist/:id/edit`, (req, res) => {
   });
 });
 
-server.delete(`/artist/:id/delete`, (req, res) => {
+server.delete(`/relatedArtists/artist/delete/:id`, (req, res) => {
   deleteArtist (req.params.id, (error, data) => {
     if (error) {
       res.status(400).send(error);

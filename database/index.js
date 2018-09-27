@@ -10,7 +10,7 @@ const getRelatedArtists = function (id, showArtist) {
   let sqlQuery =
     `select artist_name, artistid, listeners, artist_image, popularSong from artist 
      where artistid in (select related_artist_id from relatedartists 
-     where main_artist_id =` + connection.escape + `)`;
+     where main_artist_id =` + connection.escape(id) + `)`;
   connection.query (sqlQuery, function (error, result) {
     if (error) {
       console.log ('db query error');
