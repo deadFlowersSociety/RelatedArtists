@@ -1,6 +1,8 @@
 let faker = require ('faker');
 let fs = require('fs');
 
+// When generating data, one needs to manually run this file 10 times
+// each time, w should be incremented, starting from 1, ending at 10
 let w = 1;
 
 let genreOptions = {
