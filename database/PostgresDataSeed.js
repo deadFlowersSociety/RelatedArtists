@@ -6,7 +6,8 @@ const client = new Client({
 })
 client.connect()
 
-var w = 10;
+// We have to manually increment w from 1 to 10
+var w = 1;
 var fileId = w - 1;
 
 client.query("COPY artist(artist_name, listeners, artist_image, popularSong, artist_genre) FROM '/Users/wissemgamra/Desktop/SDC/RelatedArtists/Data/artistsData-" + w + ".csv' DELIMITER ',' CSV HEADER;", (err, res) => {
