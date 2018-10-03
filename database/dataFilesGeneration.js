@@ -20,7 +20,7 @@ let w = 1;
 
 // for (var w = 1; w < 11; w++) {
   let artistsResults = [];
-  for (let i = 0; i < 1000000; i++) {
+  for (let i = 0; i < 100000; i++) {
     var relArtArr = [];
     var randomId;
     for (var j = 0; j < 10; j++) {
@@ -31,11 +31,11 @@ let w = 1;
       relArtArr.push(randomId);
     }
     artistsResults.push ({
-      artistID: (w-1) * 1000000 + i + 1,
+      artistid: (w-1) * 1000000 + i + 1,
       artist_name: faker.name.findName (),
       listeners: faker.random.number (),
       artist_image: `https://s3.us-east-2.amazonaws.com/spotifyalbumplayer/Related+Artists+Images/${i % 910}.webp`,
-      popularSong: faker.lorem.word (),
+      popularsong: faker.lorem.word (),
       related_artists: relArtArr
     });
   }
