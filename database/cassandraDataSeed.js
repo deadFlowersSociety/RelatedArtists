@@ -1,18 +1,5 @@
 const cassandra = require('cassandra-driver');
-// const fs = require('fs');
 const client = new cassandra.Client({ contactPoints: ['127.0.0.1'], keyspace: 'relatedArtists' });
- 
-// fs.readFile('./Data/artistsData-1.json', (err, data) => {
-//   if (err) console.error(err);
-//   let json = JSON.parse(data);
-//   console.log("We're here", json.length)
-//   for (var i = 0; i < json.length; i++) {
-//     let query = "INSERT INTO artist JSON '" + JSON.stringify(json[i]) + "'";
-//     client.execute(query, function(err, result) {
-//       if (err) console.log(err);
-//     });
-//   }
-// })
 
 var w = 10;
 
